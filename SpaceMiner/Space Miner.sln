@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SpaceMiner", "SpaceMiner.vcxproj", "{428831ED-1930-42FF-A23F-21335EB5A42E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5144B4B1-5892-4BE6-A9B9-6AE7EBBF7D86} = {5144B4B1-5892-4BE6-A9B9-6AE7EBBF7D86}
+		{9E5D98B2-8425-4403-894C-A7EA1326DD6A} = {9E5D98B2-8425-4403-894C-A7EA1326DD6A}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Bubbles", "..\Bubbles\Bubbles\Bubbles.vcxproj", "{5144B4B1-5892-4BE6-A9B9-6AE7EBBF7D86}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{71D25A8D-587B-4F6A-83C7-77FD8657AE59}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\GitHub\Bubbles\Shared\DLL_PUBLIC.h = ..\..\..\GitHub\Bubbles\Shared\DLL_PUBLIC.h
+		..\..\..\GitHub\Bubbles\Shared\STDCALL.h = ..\..\..\GitHub\Bubbles\Shared\STDCALL.h
+		..\..\..\GitHub\Bubbles\Shared\TimerWrapper.cpp = ..\..\..\GitHub\Bubbles\Shared\TimerWrapper.cpp
+		..\..\..\GitHub\Bubbles\Shared\TimerWrapper.h = ..\..\..\GitHub\Bubbles\Shared\TimerWrapper.h
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Glumer", "..\Glumer\Glumer\Glumer.vcxproj", "{9E5D98B2-8425-4403-894C-A7EA1326DD6A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{428831ED-1930-42FF-A23F-21335EB5A42E}.Debug|Win32.ActiveCfg = Debug|Win32
+		{428831ED-1930-42FF-A23F-21335EB5A42E}.Debug|Win32.Build.0 = Debug|Win32
+		{428831ED-1930-42FF-A23F-21335EB5A42E}.Release|Win32.ActiveCfg = Release|Win32
+		{428831ED-1930-42FF-A23F-21335EB5A42E}.Release|Win32.Build.0 = Release|Win32
+		{5144B4B1-5892-4BE6-A9B9-6AE7EBBF7D86}.Debug|Win32.ActiveCfg = Debug|Win32
+		{5144B4B1-5892-4BE6-A9B9-6AE7EBBF7D86}.Debug|Win32.Build.0 = Debug|Win32
+		{5144B4B1-5892-4BE6-A9B9-6AE7EBBF7D86}.Release|Win32.ActiveCfg = Release|Win32
+		{5144B4B1-5892-4BE6-A9B9-6AE7EBBF7D86}.Release|Win32.Build.0 = Release|Win32
+		{9E5D98B2-8425-4403-894C-A7EA1326DD6A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{9E5D98B2-8425-4403-894C-A7EA1326DD6A}.Debug|Win32.Build.0 = Debug|Win32
+		{9E5D98B2-8425-4403-894C-A7EA1326DD6A}.Release|Win32.ActiveCfg = Release|Win32
+		{9E5D98B2-8425-4403-894C-A7EA1326DD6A}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

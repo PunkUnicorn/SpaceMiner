@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\GameGuts">
+      <UniqueIdentifier>{6b831bca-dc64-435e-bde0-4ed06e17dc1a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameGuts\Headers">
+      <UniqueIdentifier>{f17dc9be-cc2b-49c8-a2c1-9a3d0710f097}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Shared">
+      <UniqueIdentifier>{daf621ba-7d0c-4785-9835-f54aeebe9039}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="SpaceMiner.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GameGuts.cpp">
+      <Filter>Source Files\GameGuts</Filter>
+    </ClCompile>
+    <ClCompile Include="CrashRocks.cpp">
+      <Filter>Source Files\GameGuts</Filter>
+    </ClCompile>
+    <ClCompile Include="CameraMovement.cpp">
+      <Filter>Source Files\GameGuts</Filter>
+    </ClCompile>
+    <ClCompile Include="UI.cpp">
+      <Filter>Source Files\GameGuts</Filter>
+    </ClCompile>
+    <ClCompile Include="CreateRock.cpp">
+      <Filter>Source Files\GameGuts</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionProcessing.cpp">
+      <Filter>Source Files\GameGuts</Filter>
+    </ClCompile>
+    <ClCompile Include="Diagnostic.cpp">
+      <Filter>Source Files\GameGuts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Shared\TimerWrapper.cpp">
+      <Filter>Header Files\Shared</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CrashRocks.h">
+      <Filter>Source Files\GameGuts\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="UI.h">
+      <Filter>Source Files\GameGuts\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="GameGuts.h">
+      <Filter>Source Files\GameGuts\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="CreateRock.h">
+      <Filter>Source Files\GameGuts\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionProcessing.h">
+      <Filter>Source Files\GameGuts\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Diagnostic.h">
+      <Filter>Source Files\GameGuts\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="CameraMovement.h">
+      <Filter>Source Files\GameGuts\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Shared\Bubbles.h">
+      <Filter>Header Files\Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Shared\CoordCallback.h">
+      <Filter>Header Files\Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Shared\DLL_PUBLIC.h">
+      <Filter>Header Files\Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Shared\Glumer.h">
+      <Filter>Header Files\Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Shared\STDCALL.h">
+      <Filter>Header Files\Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Shared\TimerWrapper.h">
+      <Filter>Header Files\Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Shared\TraceFunc.h">
+      <Filter>Header Files\Shared</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
