@@ -68,7 +68,6 @@ unsigned int cTimerWrapper::timer_callback(unsigned int interval, void *pParam)
    catch (...)
    {
       if (envoke->mAbort) throw -999;
-      //throw -42;
    }
 
    return envoke->mEventCallbackDelay;
