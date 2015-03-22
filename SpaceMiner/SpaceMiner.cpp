@@ -125,7 +125,6 @@ int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLi
 
    while (!done)
    {
-      SDL_Delay(15);
       SpaceMiner::GameGuts::GameGuts();
 
       glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -139,8 +138,8 @@ int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLi
 
          glMatrixMode(GL_PROJECTION);                           
       glPopMatrix();
-      SDL_Delay(0);
-      glFlush();
+
+	  glFlush();
       SDL_GL_SwapBuffers();
 
       while(SDL_PollEvent(&sdl_event_data)) 
@@ -280,7 +279,6 @@ int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLi
             default:
                break;
          }
-         SDL_Delay(1);
       }
    }
 

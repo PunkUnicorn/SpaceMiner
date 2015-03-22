@@ -140,9 +140,7 @@ void ShowDebugTimingMessageAndShit(char *code, Uint32 num, Uint32 &start, unsign
       static const int JustOverASecond = 1111;
       Uint32 now = SDL_GetTicks();
       if (now - DiagnosticData::ClearMaxStart > JustOverASecond)
-      {
          DiagnosticData::CLEARMAX = false;
-      }
    }
 }
 

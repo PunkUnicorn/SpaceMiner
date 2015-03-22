@@ -41,7 +41,7 @@ void STDCALL FireAllCannons(unsigned int)
    static const float bulletSpeed = 10.0f;
    static const float bulletRenderRadius = 1.0f;
 
-   //front cannons only. 
+   //front cannons only, they don't rotate with the ship yet :/
    CreateRock::NewRock(cameraX-4.0f, cameraY-4.0f, cameraZ, bulletRenderRadius, 
          -45.0f, 0.5f, 0.5f, 0.5f, -2.0f, 
          camDirX+0.0f, camDirY+0.0f, camDirZ-bulletSpeed, true);
@@ -115,7 +115,9 @@ void STDCALL RockClicked(unsigned int senderId)
       MasterSetTarget(GameGuts::GameGutsData::cameraID);
       Bubbles::RemoveBubble(GameGuts::GameGutsData::my_collisionEngines[cCollisionEngines::MeteorOne], senderId);
 
-      std::vector<unsigned int>::iterator intIt = std::find(GameGuts::GameGutsData::my_glumerIdList.begin(), GameGuts::GameGutsData::my_glumerIdList.end(), senderId);
+      std::vector<unsigned int>::iterator intIt 
+		  = std::find(GameGuts::GameGutsData::my_glumerIdList.begin(), GameGuts::GameGutsData::my_glumerIdList.end(), senderId);
+
       if (intIt != GameGuts::GameGutsData::my_glumerIdList.end())
       {
          std::swap(*intIt, GameGuts::GameGutsData::my_glumerIdList.back());
@@ -146,7 +148,6 @@ bool GetRadarSwitchValue(void)
 void STDCALL ShortRangeRadarOnOffOnClick(unsigned int senderId, bool state)
 {
 	radarSwitchValue = !radarSwitchValue;
-	//my_radar1.ptr->SetVisible(off);
 }
 
 }

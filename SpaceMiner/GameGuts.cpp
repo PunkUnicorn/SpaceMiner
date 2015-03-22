@@ -85,7 +85,7 @@ static void FPSDebugMessage(unsigned int &frameCount)
 
    unsigned int now = SDL_GetTicks();
    static const int oneSecond = 1000;
-   if (frameStart == 0 || now-frameStart > oneSecond)
+   if (frameStart == 0 || now - frameStart > oneSecond)
    {
       static unsigned int frameMin;
       static unsigned int frameMax;
@@ -190,7 +190,6 @@ static void GameWorldBoundsProcessing(void)
 void GameGuts(void)
 {
 	GameWorldBoundsProcessing();
-   SDL_Delay(0);
 
    CreateRock::ExpireBullets();
   
@@ -213,14 +212,10 @@ void PointerHitTest(unsigned int mouse_x, unsigned int mouse_y, int mouse_z)
    static std::vector<int> avgSource(Diagnostic::DiagnosticData::avgNum);
    static unsigned int avgIndex;
    
-   SDL_Delay(0);
-
    unsigned int start = SDL_GetTicks();
    Glumer::HitTest(mouse_x, mouse_y, mouse_z);
    unsigned int end = SDL_GetTicks();
    Diagnostic::ShowDebugTimingMessageAndShit("CLICK", 0, start, end, min, max, avgSource, avgIndex);
-
-   SDL_Delay(0);
 }
 
 static void MakeRadars(void)

@@ -92,11 +92,8 @@ public:
       static Uint32 longPulseStart;
       if (longPulseStart == 0) longPulseStart = now;
 
-      SDL_Delay(0);
       for (unsigned int i=0; i<size; i++)
       {
-         SDL_Delay(0); //breath
-
          if (collisionResults[i].mCenterID == GameGuts::GameGutsData::cameraID)
             DoRadarProcessing(collisionResults[i], now, longPulseStart);
          else if (collisionResults[i].mDistanceUnits[0].id == GameGuts::GameGutsData::cameraID)

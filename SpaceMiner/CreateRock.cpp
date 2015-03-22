@@ -50,13 +50,15 @@ unsigned int NewRock(float x, float y, float z, float scale,
    bool setIt = true;
    if (isBullet)
    {
-      id = Glumer::CreateBullet(scale, x, y, z, dirZ, dirY, dirZ);
+      //id = Glumer::CreateBullet(scale, x, y, z, dirZ, dirY, dirZ);
+	   id = Glumer::CreatePolyhedron(scale, Glumer::cPolyhedronType::Octahedron, x, y, z, NULL);
    }
    else
    {
-      id = Glumer::CreateRock(scale, x, y, z, &UI::RockClicked);
-      setIt = setIt && Glumer::SetDirection(id, dirX, dirY, dirZ);
+      //id = Glumer::CreateRock(scale, x, y, z, &UI::RockClicked);
+	  id = Glumer::CreatePolyhedron(scale, Glumer::cPolyhedronType::Cube, x, y, z, &UI::RockClicked);
    }
+
    setIt = setIt && Glumer::SetOrientation(id, angle, angleX, angleY, angleZ, angleInc);
    setIt = setIt && Glumer::SetDirection(id, dirX, dirY, dirZ);
 
@@ -90,7 +92,6 @@ void ExpireBullets(void)
    std::vector<unsigned int> removeList;
    for (; it != CreateRock::GetBulletMap().end(); it++)
    {
-      SDL_Delay(0);
       if (it->second < now) // delete if expired
       {
          Bubbles::RemoveBubble(GameGuts::GameGutsData::my_collisionEngines[cCollisionEngines::MeteorOne], it->first);
@@ -110,7 +111,6 @@ void ExpireBullets(void)
    std::vector<unsigned int>::iterator removeIt = removeList.begin();
    for (; removeIt != removeList.end(); removeIt++)
    {
-      SDL_Delay(0);
       std::map<unsigned int, Uint32>::iterator findIt = CreateRock::GetBulletMap().find(*removeIt);
       if (findIt == CreateRock::GetBulletMap().end()) return;
       CreateRock::GetBulletMap().erase(findIt);

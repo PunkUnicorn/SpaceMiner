@@ -22,23 +22,36 @@ extern "C" DLL_PUBLIC bool STDCALL GetLocation(unsigned int id, float &x, float 
 extern "C" DLL_PUBLIC bool STDCALL SetLocation(unsigned int id, float x, float y, float z);
 extern "C" DLL_PUBLIC bool STDCALL AddLocation(unsigned int id, float x, float y, float z);
 
-extern "C" DLL_PUBLIC bool STDCALL GetDirection(unsigned int id, float &x, float &y, float &z);//, float &velocity);
-extern "C" DLL_PUBLIC bool STDCALL SetDirection(unsigned int id, float x, float y, float z);//, float velocity);
-extern "C" DLL_PUBLIC bool STDCALL AddDirection(unsigned int id, float x, float y, float z);//, float velocity);
+extern "C" DLL_PUBLIC bool STDCALL GetDirection(unsigned int id, float &x, float &y, float &z);
+extern "C" DLL_PUBLIC bool STDCALL SetDirection(unsigned int id, float x, float y, float z);
+extern "C" DLL_PUBLIC bool STDCALL AddDirection(unsigned int id, float x, float y, float z);
 
 extern "C" DLL_PUBLIC bool STDCALL GetOrientation(unsigned int id, float &angle, float &x, float &y, float &z, float &angleIncrement);
 extern "C" DLL_PUBLIC bool STDCALL SetOrientation(unsigned int id, float angle, float x, float y, float z, float angleIncrement);
 extern "C" DLL_PUBLIC bool STDCALL AddOrientation(unsigned int id, float angle, float x, float y, float z, float angleIncrement);
 
-extern "C" DLL_PUBLIC void STDCALL SetInvisible(unsigned glumId, bool visible);
+extern "C" DLL_PUBLIC bool STDCALL SetInvisible(unsigned glumId, bool visible);
 
 // CreateRock
-extern "C" DLL_PUBLIC unsigned int STDCALL CreateRock(float scale, float x, float y, float z, GlumerOnClicked *onClicked);
-extern "C" DLL_PUBLIC bool STDCALL SetRockOnClicked(unsigned int id, GlumerOnClicked *onClicked);
-extern "C" DLL_PUBLIC bool STDCALL GetRockRadius(unsigned int id, float &radius);
+/*depreciated*/ //extern "C" DLL_PUBLIC unsigned int STDCALL CreateRock(float scale, float x, float y, float z, GlumerOnClicked *onClicked);
+/*depreciated*/ //extern "C" DLL_PUBLIC bool STDCALL SetRockOnClicked(unsigned int id, GlumerOnClicked *onClicked);
+/*depreciated*/ //extern "C" DLL_PUBLIC bool STDCALL GetRockRadius(unsigned int id, float &radius);
+
+typedef int PolyhedronType;
+struct cPolyhedronType 
+{ 
+	static PolyhedronType const Unknown = 0; 
+	static PolyhedronType const Cube = 400; 
+	static PolyhedronType const Octahedron = 800; 
+};
+
+// CreatePolyhedron
+extern "C" DLL_PUBLIC unsigned int STDCALL CreatePolyhedron(float scale, PolyhedronType type, float x, float y, float z, GlumerOnClicked *onClicked);
+extern "C" DLL_PUBLIC bool STDCALL SetPolyhedronOnClicked(unsigned int id, GlumerOnClicked *onClicked);
+extern "C" DLL_PUBLIC bool STDCALL GetPolyhedronRadius(unsigned int id, float &radius);
 
 // CreateBullet
-extern "C" DLL_PUBLIC unsigned int STDCALL CreateBullet(float scale, float x, float y, float z, float dirX, float dirY, float dirZ);
+/*depreciated*/ //extern "C" DLL_PUBLIC unsigned int STDCALL CreateBullet(float scale, float x, float y, float z, float dirX, float dirY, float dirZ);
 
 // CreateSwitch
 extern "C" DLL_PUBLIC unsigned int STDCALL CreateSwitch(float scale, float whereX, float whereY, float whereZ, bool pulseWhenOn, GlumerOnClickedBool *onClicked);
@@ -61,11 +74,10 @@ extern "C" DLL_PUBLIC bool STDCALL ScrollConsoleText(unsigned int id, unsigned i
 extern "C" DLL_PUBLIC unsigned int STDCALL CreateCamera(void);
 
 // Callback for the collision engine Bubbles to get items coordinates
-//typedef void STDCALL GetCoordsFunc(unsigned int /*engineId*/, unsigned int /*bubbleId also glumId*/, float &/*X*/, float &/*Y*/, float &/*Z*/); // From Bubbles
 extern "C" DLL_PUBLIC GetCoordsFunc* STDCALL CallToGetCoords(void); 
 
 // Delete a glumer item created with Create... functions
-extern "C" DLL_PUBLIC void STDCALL Delete(unsigned int deleteId);
+extern "C" DLL_PUBLIC bool STDCALL Delete(unsigned int deleteId);
 
 extern "C" DLL_PUBLIC void STDCALL Start(unsigned int cameraId);
 extern "C" DLL_PUBLIC void STDCALL DrawScene(int r, int g, int b);

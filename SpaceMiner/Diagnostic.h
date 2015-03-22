@@ -30,8 +30,7 @@ void ShowTargetInfo(void);
 class DiagnosticData
 {
 public:
-   static std::map<unsigned int/*bullet/glumId*/, unsigned int/*hit itemId*/> bulletHits;
-   //static unsigned int diagnosticConsoleId;
+   static std::map<unsigned int/*glumId*/, unsigned int/*hit itemId*/> bulletHits;
 
    static bool CLEARMAX;
    static Uint32 ClearMaxStart;
